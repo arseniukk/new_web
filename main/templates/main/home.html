@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #DEB887; /* Фоновий колір головної сторінки */
+        }
+        .menu {
+            background-color: #A0522D; /* Колір блоку меню */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            margin-right: 10px;
+            color: black; /* Колір тексту посилань */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="{% url 'create_news' %}">Створити новину</a> <!-- Додайте посилання на сторінку створення новини -->
+        <a href="{% url 'view_news' %}">Перегляд новин</a>
+        <a href="#">Контакти</a>
+    </div>
+    <h2>Welcome, {{ user.username }}</h2>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>

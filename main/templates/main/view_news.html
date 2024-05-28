@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View News</title>
+</head>
+<body>
+    <h2>Local News</h2>
+    {% if local_news %}
+        <ul>
+            {% for single_news in local_news %}
+                <li>{{ single_news.title }}</li>
+                <p>{{ single_news.content }}</p>
+                <p>{{ single_news.date_created }}</p>
+                <p>Author: {{ single_news.author }}</p>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No local news available.</p>
+    {% endif %}
+
+    <h2>RSS News</h2>
+    {% if rss_news %}
+        <ul>
+            {% for single_news in rss_news %}
+                <li>{{ single_news.title }}</li>
+                <p>{{ single_news.summary }}</p>
+                <p><a href="{{ single_news.link }}" target="_blank">Read more</a></p>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No news from RSS available.</p>
+    {% endif %}
+</body>
+</html>
